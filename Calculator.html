@@ -1,0 +1,70 @@
+<!DOCTYPE HTML> <!-- 声明文档类型为 HTML5 -->
+<html lang="zh-CN"> <!-- 设置页面语言为中文 -->
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 响应式设计，适配不同设备 -->
+    <title>我的待办事项</title> <!-- 网页标题 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 设置字体 */
+            max-width: 500px; /* 最大宽度 */
+            margin: 0 auto; /* 居中显示 */
+            padding: 20px; /* 内边距 */
+        }
+        #todo-input {
+            width: 70%; /* 输入框宽度 */
+            padding: 8px; /* 输入框内边距 */
+            margin-right: 5px; /* 右边距 */
+        }
+        button {
+            padding: 8px 15px; /* 按钮内边距 */
+        }
+        #todo-list {
+            list-style: none; /* 去除列表默认样式 */
+            padding: 0; /* 去除内边距 */
+        }
+        #todo-list li {
+            padding: 8px; /* 列表项内边距 */
+            margin: 5px 0; /* 列表项上下间距 */
+            background: #f5f5f5; /* 列表项背景色 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            display: flex; /* 使用flex布局 */
+            justify-content: space-between; /* 两端对齐 */
+            align-items: center; /* 垂直居中 */
+        }
+        #todo-list li.done {
+            text-decoration: line-through; /* 完成项加删除线 */
+            color: #aaa; /* 完成项变灰色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>我的待办事项</h1> <!-- 页面主标题 -->
+    <input id="todo-input" type="text" placeholder="添加新任务..."> <!-- 输入框，输入新任务 -->
+    <button id="add-btn">添加</button> <!-- 添加按钮 -->
+    <ul id="todo-list"></ul> <!-- 待办事项列表 -->
+    <script>
+        const input = document.getElementById('todo-input'); // 获取输入框元素
+        const addBtn = document.getElementById('add-btn'); // 获取添加按钮元素
+        const list = document.getElementById('todo-list'); // 获取待办列表元素
+
+        // 添加任务
+        addBtn.onclick = function() {
+            const value = input.value.trim(); // 获取输入框内容并去除首尾空格
+            if (!value) return; // 如果内容为空则不添加
+            const li = document.createElement('li'); // 创建新的列表项
+            li.textContent = value; // 设置列表项内容
+            li.onclick = function() {
+                li.classList.toggle('done'); // 点击切换完成状态
+            };
+            list.appendChild(li); // 添加到列表中
+            input.value = ''; // 清空输入框
+        };
+
+        // 回车也能添加任务
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') addBtn.onclick(); // 按下回车时触发添加
+        });
+    </script>
+</body>
+</html>

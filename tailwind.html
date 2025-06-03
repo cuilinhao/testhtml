@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!-- 声明HTML5文档类型 -->
+<html lang="zh-CN">
+<!-- 设置网页语言为简体中文 -->
+<head>
+    <!-- 网页头部信息 -->
+    <meta charset="UTF-8">
+    <!-- 设置字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 响应式视口设置，适配移动设备 -->
+    <title>Toolify.ai - AI工具目录</title>
+    <!-- 网页标题，显示在浏览器标签页 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Tailwind CSS框架 -->
+    <style>
+        /* 自定义CSS样式 */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        /* 设置默认字体栈 */
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 页面主体，背景设为浅灰色 -->
+    <!-- 主导航栏 -->
+    <nav class="bg-white shadow-sm border-b">
+        <!-- 白色导航栏，带底部边框 -->
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- 居中容器 -->
+            <div class="flex justify-between items-center h-16">
+                <!-- 导航内容区 -->
+                <div class="flex items-center space-x-8">
+                    <!-- 左侧导航内容 -->
+                    
+                    <!-- 网站Logo -->
+                    <div class="flex items-center space-x-2">
+                        <!-- Logo图标 -->
+                             <!-- 外层div：
+                             w-8, h-8
+                             `w-8` 和`h-8` 是 Tailwind CSS 的类名，分别表示元素的宽度和高度都设置为 2rem（32像素）。 
+                             宽高2rem，灰色背景，圆形，flex布局，内容居中
+                              • `flex`
+                            启用 flexbox 布局，让子元素可以灵活排列。
+            • `items-center`
+                在 flex 容器中让子元素在垂直方向（纵向）居中。
+            • `justify-center`
+                在 flex 容器中让子元素在水平方向（横向）居中。
+                             -->
+
+                        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                            <!-- Logo图标容器，渐变背景 -->
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <!-- 星星图标 -->
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Toolify.ai</span>
+                        <!-- 网站名称 -->
+                    </div>
+
+                    <!-- 导航链接 -->
+                    <div class="flex items-center space-x-6">
+                        <!-- 产品菜单 -->
+                        <div class="flex items-center space-x-1 text-gray-700 hover:text-gray-900 cursor-pointer">
+                            <span>产品</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <!-- 下拉箭头 -->
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        
+                        <a href="#" class="text-gray-700 hover:text-gray-900">分类</a>
+                        <!-- 分类链接 -->
+                        
+                        <!-- 排行榜菜单 -->
+                        <div class="flex items-center space-x-1 text-gray-700 hover:text-gray-900 cursor-pointer">
+                            <span>排行榜</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        
+                        <a href="#" class="text-gray-700 hover:text-gray-900">AI模型</a>
+                        <!-- AI模型链接 -->
+                        <a href="#" class="text-gray-700 hover:text-gray-900">社交监听</a>
+                        <!-- 社交监听链接 -->
+                        
+                        <!-- 提交与广告菜单 -->
+                        <div class="flex items-center space-x-2 text-gray-700 hover:text-gray-900 cursor-pointer">
+                            <div class="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></div>
+                            <!-- 渐变小图标 -->
+                            <span>提交&amp;广告</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- AI SEO工具带"新"标签 -->
+                        <div class="flex items-center space-x-2">
+                            <a href="#" class="text-gray-700 hover:text-gray-900">AI SEO工具</a>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">新</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧用户控制区 -->
+                <div class="flex items-center space-x-4">
+                    <!-- 仪表板按钮 -->
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        仪表板
+                    </button>
+                    
+                    <!-- 用户头像图标 -->
+                    <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <svg class="w-4 h-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <!-- 用户图标 -->
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    
+                    <!-- 语言选择 -->
+                    <span class="text-gray-700">EN</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面主要内容 -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- 英雄区域/标题区 -->
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                发现最佳AI网站和工具
+            </h1>
+            <p class="text-lg text-gray-600 mb-2">
+                <span class="text-purple-600 font-semibold">25988</span> 个AI工具和 
+                <span class="text-purple-600 font-semibold">459</span> 个分类收录在我们的AI工具目录中。AI工具列表和GPT商店每日由ChatGPT更新。
+            </p>
+            <p class="text-gray-600">
+                赞助商： <a href="#" class="text-purple-600 hover:underline">Trae</a>。
+            </p>
+        </div>
+
+        <!-- 搜索栏 -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="relative">
+                <input 
+                    type="text" 
+                    placeholder="搜索AI工具，例如：视频翻译AI工具"
+                    class="w-full px-6 py-4 text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent shadow-sm"
+                >
+                <!-- 搜索输入框 -->
+                <button class="absolute right-2 top-2 bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition-colors">
+                    <!-- 搜索按钮 -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <!-- 搜索图标 -->
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 筛选标签 -->
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center space-x-4">
+                <!-- 今日筛选 -->
+                <button class="bg-purple-600 text-white px-4 py-2 rounded-full flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- 日历图标 -->
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>今日</span>
+                </button>
+                
+                <!-- 新工具筛选 -->
+                <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- 书签图标 -->
+                        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                    </svg>
+                    <span>最新</span>
+                </button>
+                
+                <!-- 最多收藏筛选 -->
+                <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path>
+                    </svg>
+                    <span>最多收藏</span>
+                </button>
+                
+                <!-- 最多使用筛选 -->
+                <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <!-- 勾选图标 -->
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>最多使用</span>
+                </button>
+                
+                <!-- 浏览器扩展筛选 -->
+                <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                    <div class="w-4 h-4 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 to-blue-500 rounded-full"></div>
+                    <!-- 彩色圆点图标 -->
+                    <span>浏览器扩展</span>
+                </button>
+                
+                <!-- 应用筛选 -->
+                <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                    <!--
+                     • `w-8`：宽度为 2rem（32px）
+                     • `h-8`：高度为 2rem（32px）
+                    -->
+                    <div class="w-4 h-4 bg-black rounded"></div>
+                    <!-- 黑色方块图标 -->
+                    <span>应用</span>
+                </button>
+            </div>
+
+            <!-- 右侧社交媒体和特色标签 -->
+            <div class="flex items-center space-x-4">
+                <!-- Twitter链接 -->
+                <a href="#" class="text-blue-500 hover:underline flex items-center space-x-1">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <!-- Twitter图标 -->
+                        <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                    </svg>
+                    <span>@toolify</span>
+                </a>
+                
+                <!-- 特色标签 -->
+                <div class="text-right">
+                    <h2 class="text-2xl font-bold text-gray-900">精选*</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部筛选 -->
+        <div class="flex items-center justify-start mb-8">
+            <button class="text-gray-700 px-4 py-2 rounded-full border hover:bg-gray-50 flex items-center space-x-2">
+                <div class="w-4 h-4 bg-black rounded-full"></div>
+                <!-- 黑色圆点图标 -->
+                <span>AI Discord社区</span>
+            </button>
+        </div>
+    </main>
+</body>
+</html>
