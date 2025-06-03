@@ -92,6 +92,49 @@
         transition-colors  颜色过渡
         group              分组（可用于子元素悬停联动）
       -->
-      <label class="flex items-center cursor-pointer">
+            <label class="flex items-center cursor-pointer">
         <!-- 
-          flex
+          flex           横向排列
+          items-center   垂直居中
+          cursor-pointer 鼠标悬停变为手型
+        -->
+        <input type="checkbox" class="h-5 w-5 text-purple-500 rounded border-gray-300 focus:ring-purple-500 mr-3">
+        <!-- 
+          h-5 w-5               复选框宽高1.25rem
+          text-purple-500       选中时为紫色
+          rounded               圆角
+          border-gray-300       灰色边框
+          focus:ring-purple-500 聚焦时紫色ring
+          mr-3                  右外边距0.75rem
+        -->
+        <span class="text-gray-700 font-medium">完成Tailwind项目设计</span>
+        <!-- 
+          text-gray-700 深灰色文字
+          font-medium   中等加粗
+        -->
+        <span class="ml-auto bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">工作</span>
+        <!-- 
+          ml-auto         自动左外边距（推到最右）
+          bg-blue-100     浅蓝色背景
+          text-blue-800   深蓝色文字
+          text-xs         极小字号
+          px-2 py-1       左右内边距0.5rem，上下0.25rem
+          rounded-full    全圆角（胶囊形状）
+        -->
+      </label>
+    </li>
+    <li class="p-4 hover:bg-gray-50 transition-colors group">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" checked class="h-5 w-5 text-purple-500 rounded border-gray-300 focus:ring-purple-500 mr-3">
+        <!-- checked 复选框默认选中 -->
+        <span class="text-gray-400 font-medium line-through">购买生日礼物</span>
+        <!-- 
+          text-gray-400  浅灰色文字
+          font-medium    中等加粗
+          line-through   删除线（表示已完成）
+        -->
+      </label>
+    </li>
+  </ul>
+</div>
+
