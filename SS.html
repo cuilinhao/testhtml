@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 适配不同设备-->
+        <meta name="test123" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>我的待办事项</title> <!-- 网页标题-->
+    <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 500;
+        margin: 0;
+        padding: 20;
+    }
+    #todo-input {
+        width: 70%;
+        /*内边距*/
+        padding: 10px;
+        /*右边距*/
+        margin-right: 5px;
+    }
+    button {
+        /* 按钮内边距*/
+        padding: 8px 15px;
+    }
+    #todo-list {
+        list-style: none;
+        padding: 0;
+    }
+    #todo-list li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    #todo-list li {
+    padding: 8px;
+    margin: 5px;
+    background: #f5f5f5;
+    cursor:pointer; /** 鼠标停留位置*/
+    display: flex; /*使用flex布局*/
+    justify-content: space-between; /*两端对齐*/
+    align-items: center; /*垂直居中*/
+    }
+
+    #todo-list li.completed {
+        text-decoration: line-through; /*完成项加删除线*/
+        color: #aaa; /*完成项变灰色*/
+    }
+    
+    </style>
+    </head>
+    <body>
+        <h1>我的待办事项</h1>
+        <!--输入框，输入新任务-->
+        <input id = "todo-input", type="text" placeholder="添加新任务">
+<button id = "add-btn">添加 </button>
+<ul id="todo-list"></ul> <!--待办事项列表-->
+<script>
+    const input = document.getElementById
+    ('todo-input'); //获取输入框元素
+    const addBtn = document.getElementById('add-btn'); //获取添加按钮元素
+    const list = document.getElementById('todo-list'); //获取待办事项列表元素
+
+    //添加任务
+    addBtn.onclick = function() {
+        //获取输入框内容并去除首尾空格
+        const value = input.value.trim();
+        if (!value) return;
+        const li = document.createElement
+        //创建新的列表项
+        ('li')
+        //设置列表项内容
+        li.textContent = value;
+        li.onclick = function() {
+            //点击后切换为完成状态
+            li.classList.toggle('completed');
+        };
+        //添加到列表中
+        list.appendChild(li);
+        //清空输入框
+        input.value = '';
+    };
+
+    //回车也能添加任务
+    input.addEventListener('keydown', function(e) {
+        // if (e.keyCode === 'Enter') {
+        //     addBtn.click()
+        //     // 按下回车时触发添加
+        // ();
+        if (e.key === 'Enter') addBtn.onclick(); // 按下回车时触发添加
+        
+        
+    });
+
+</script>
+    </body>
+    </html>
